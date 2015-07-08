@@ -19,14 +19,14 @@ class LengthException extends ValidationException
 
     public static $defaultTemplates = array(
         self::MODE_DEFAULT => array(
-            self::BOTH => '{{name}} must have a length between {{minValue}} and {{maxValue}}',
-            self::LOWER => '{{name}} must have a length greater than {{minValue}}',
-            self::GREATER => '{{name}} must have a length lower than {{maxValue}}',
+            self::BOTH => '{{name}} debe tener una longitud entre {{minValue}} and {{maxValue}}',
+            self::LOWER => '{{name}} debe tener una longitud mayor a {{minValue}}',
+            self::GREATER => '{{name}} debe tener una longitud menor a {{maxValue}}',
         ),
         self::MODE_NEGATIVE => array(
-            self::BOTH => '{{name}} must not have a length between {{minValue}} and {{maxValue}}',
-            self::LOWER => '{{name}} must not have a length greater than {{minValue}}',
-            self::GREATER => '{{name}} must not have a length lower than {{maxValue}}',
+            self::BOTH => '{{name}} no debe tener una longitud entre {{minValue}} and {{maxValue}}',
+            self::LOWER => '{{name}} no debe tener una longitud mayor a {{minValue}}',
+            self::GREATER => '{{name}} no debe tener una longitud mayor a {{maxValue}}',
         ),
     );
 
