@@ -20,7 +20,7 @@ class When extends AbstractRule
     public $then;
     public $else;
 
-    public function __construct(Validatable $when, Validatable $then, Validatable $else = null)
+    public function __construct($when, Validatable $then, Validatable $else = null)
     {
         $this->when = $when;
         $this->then = $then;
@@ -43,6 +43,13 @@ class When extends AbstractRule
 
     public function assert($input)
     {
+        if($this->when === TRUE) {
+           return $this->then->assert($input);
+        }
+        elseif($this->when === FALSE) {
+            return $this->else->assert($input);
+        }
+
         if ($this->when->validate($input)) {
             return $this->then->assert($input);
         }
